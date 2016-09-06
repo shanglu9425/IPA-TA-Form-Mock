@@ -1,0 +1,118 @@
+a {
+  color: #337ab7;
+}
+h3, .h3 {
+  font-size: 21px;
+}
+.form-control, .btn {
+	font-size: 12px;
+}
+.page-container .sidebar-menu {
+  width: 200px;
+}
+.pager.year-switcher {
+  border-top: 1px solid rgba(69, 74, 84, 0.7);
+  border-bottom: 1px solid rgba(69, 74, 84, 0.7);
+}
+.pager.year-switcher li a {
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+}
+.pager.year-switcher li a {
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+}
+.welcome {
+  padding: 10px 20px;
+  color: #aaabae;
+}
+.sidebar-collapsed .pager.year-switcher li.previous,
+.sidebar-collapsed .pager.year-switcher li.next,
+.sidebar-collapsed .welcome {
+  display: none;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* Overriding neon-core; was messing with the positioning of toastr */
+body {
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  perspective: none;
+  font-size: 12px;
+}
+
+span.highlighted {
+  font-weight: bold;
+}
+
+.clickable {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.hoverable:hover {
+	text-decoration: none;
+	cursor: pointer;
+	filter: alpha(opacity = 60);
+	opacity: .6;
+}
+
+/* Availability grid shared directive css */
+table.availability-grid {
+	font-size: 0.7em;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-bottom: 5px;
+}
+
+table.availability-grid tr th {
+	border: none;
+	font-weight: normal;
+	padding: 0 !important;
+}
+
+table.availability-grid tr th.left {
+	text-align: left;
+	width: 2em;
+}
+
+table.availability-grid tr th.hover {
+	color: #BA0C2F;
+	font-weight: bold;
+}
+
+table.availability-grid tr td.unavailable {
+	background-color: rgba(200,200,200,0.8);
+}
+
+table.availability-grid tr td {
+	border-top: 1px solid #ddd !important;
+}
+
+.legend-square {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin: 0px 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, .2);
+}
+
+#access-denied {
+  height: 100vh;
+  text-align: center;
+}
+.checkbox label.cb-wrapper {
+    min-height: 18px;
+}

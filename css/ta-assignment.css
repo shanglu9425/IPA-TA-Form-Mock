@@ -1,0 +1,175 @@
+.text-align--center {
+    text-align: center;
+}
+
+.tile-assignment--180_width {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.question--position {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(166, 167, 170);
+    font-size: 12pt;
+}
+
+.question--position:hover {
+    color: black;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.icon-option-vertical_ta-assignment {
+    float: left;
+    left: -15px;
+    color: rgb(166, 167, 170);
+}
+
+.icon-remove_ta-assignment {/* remove course icon */
+    display: none;
+    color: #ee4749;
+    float: right;
+    position: absolute;
+    right: -20px;
+    font-size: 12pt;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+
+.department-title {
+    color: rgb(166, 167, 170);
+}
+
+.tile-assignment:hover .icon-remove_ta-assignment {
+    display: block !important;
+}
+
+.glyphicon {
+    cursor: pointer;
+}
+
+.confirmed-course {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.confirmed-course-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.unconfirmed-course-info {
+    color: black;
+    background-color: white;
+    border:1px solid #adadad;
+}
+
+
+.check-unavailable {
+    display: flex;
+    flex-direction: row;
+}
+
+.check-unavailable-time {
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    color: gray;
+}
+
+.check-unavailable-time-flex {
+    display: flex;
+    flex: 0 1 auto;
+    text-align:center;
+    border-right:2px solid #ebebeb;
+    height: 2em;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.check-unavailable-time-flex-children {
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+.check-unavailable-date {
+    display:flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 20%;
+    border-right: 2px solid #ebebeb;
+    color: gray;
+}
+
+.check-unavailable-term,.course-term {
+    flex: 0 1 auto;
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ebebeb;
+    background-color:#f5f5f6;
+    height: 3.15em;
+    color: gray;
+}
+
+.check-unavailable-date-flex {
+    display: flex;
+    flex: 0 1 auto;text-align:center;
+    height: 2em;
+    border-bottom: 1px solid #F5F5F5
+}
+
+.check-unavailable-date-flex-days {
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+.check-unavailable-date-flex-children,.unconfirmed-course_children-flex {
+    flex: 1 1 auto;
+}
+
+.border-right-none {
+    border-right: 0px;
+}
+
+.border-bottom-none {
+    border-bottom: 0px;
+}
+
+.unconfirmed-course {
+    display: flex;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 10px 20px 10px 20px;
+    text-align: center;
+}
+
+.course-term-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 20%;
+    border:1px solid #ebebeb;
+}
+
+.course-style {
+    padding: 5px;
+    border-radius: 4px;
+    margin: 10px 20px 10px 20px;
+    text-align: center;
+}
+
+.unconfirmed-course_children {
+    display: flex;
+    flex: 1 1 100%;
+}
+
+.flex-box {
+    display: flex;
+}

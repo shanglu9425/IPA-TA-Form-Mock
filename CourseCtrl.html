@@ -1,0 +1,335 @@
+<nav year="{{ year }}" term-code="{{ termCode }}" workgroup-id="{{ workgroupId }}"></nav>
+
+<div class="main-content" unselect-cell>
+
+	<h3 style="text-align: center;">{{ sharedState.workgroup.name }} {{year}} Courses</h3>
+	<br />
+
+	<div class="row" style="margin-bottom: 2em;">
+		<div class="col-sm-offset-3 col-sm-6">
+			<input type="search" class="form-control hidden-print" placeholder="Search Schedule" ng-model="view.searchQuery" ng-change="filterTable(view.searchQuery)" />
+		</div>
+	</div>
+
+	<div class="row hidden-print">
+		<div class="col-sm-12">
+			<div class="table-toolbar">
+				<span class="tool-icon glyphicon glyphicon-plus"
+				      data-toggle="tooltip" data-placement="top"
+							title="" data-original-title="Import"
+							ng-click="beginImportMode()"></span>
+
+				<div class="btn-group">
+					<span class="tool-icon glyphicon glyphicon-list-alt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+					<ul class="dropdown-menu" multiselect-dropdown items="termDefinitions" active-ids="view.state.filters.enabledTerms" toggle-item="termToggled(id)" ></ul>
+				</div> <!-- .btn-group -->
+
+				<div class="btn-group">
+					<span class="tool-icon glyphicon glyphicon-filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+					<ul class="dropdown-menu">
+						<li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;&nbsp;Undergraduate</a></li>
+						<li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;&nbsp;Graduate</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;&nbsp;Published Courses</a></li>
+						<li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;&nbsp;Unpublished Courses</a></li>
+					</ul>
+				</div> <!-- .btn-group -->
+
+				<div class="btn-group">
+					<span class="tool-icon glyphicon glyphicon-download-alt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+					<ul class="dropdown-menu">
+						<li><a href="#" class="small">as Excel</a></li>
+						<li><a href="#" class="small">as CSV</a></li>
+					</ul>
+				</div> <!-- .btn-group -->
+
+				<span class="tool-icon glyphicon glyphicon-print" data-toggle="tooltip" data-placement="top" title="" data-original-title="Print" ng-click="print()"></span>
+			</div> <!-- .table-toolbar -->
+		</div> <!-- .col-sm-12 -->
+	</div> <!-- .row -->
+
+	<div class="row hidden-print" ng-if="view.state.uiState.massImportMode">
+		<div class="col-md-12">
+
+			<div class="panel panel-primary mass-import-panel" data-collapsed="0">
+
+				<div class="panel-heading">
+					<div class="panel-title">
+						Add Multiple Courses
+					</div>
+
+					<div class="panel-options">
+						<a href="#" ng-click="endImportMode()"><i class="entypo-cancel"></i></a>
+					</div>
+				</div>
+
+				<div class="panel-body">
+
+					<form role="form" class="form-horizontal form-groups-bordered">
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label">Subject Code</label>
+
+							<div class="col-sm-4">
+								<selectize config="{maxItems: 1, valueField: 'code', labelField: 'code', searchField: ['code']}"
+									options="subjectCodes" ng-model="view.state.uiState.massImportCode"></selectize>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label">Academic Year</label>
+
+							<div class="col-sm-4">
+								<selectize config="{maxItems: 1, valueField: 'year', labelField: 'academicYear', searchField: ['academicYear']}"
+									options="recentAcademicYears" ng-model="view.state.uiState.massImportYear"></selectize>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label"></label>
+
+							<div class="col-sm-4">
+								<div class="checkbox checkbox-replace color-primary neon-cb-replacement"
+									ng-click="view.state.uiState.massImportPrivate = !view.state.uiState.massImportPrivate"
+									ng-class="{ 'checked': view.state.uiState.massImportPrivate }">
+									<label class="cb-wrapper">
+										<div class="checked"></div>
+									</label>
+									<label>Include unpublished courses</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-offset-4 col-sm-4">
+									<button class="btn btn-default btn-block" ng-click="searchImportCourses()"
+										ng-disabled="!(view.state.uiState.massImportCode && view.state.uiState.massImportYear)">Search</button>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div> <!-- .row -->
+
+	<table course-table class="table table-bordered courses-table"></table>
+
+</div>
+
+<div class="fixed right-details hidden-print">
+	<div class="panel panel-primary panel-highlight" ng-if="view.selectedEntity">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<h4 ng-if="view.selectedEntityType == 'course'">
+					{{ view.selectedEntity.subjectCode }} {{ view.selectedEntity.courseNumber 	}}
+					<br>
+					<small>{{ view.selectedEntity.title }}</small>
+				</h4>
+				<h4 ng-if="view.selectedEntityType == 'newCourse'">
+					New Course
+				</h4>
+				<h4 ng-if="view.selectedEntityType == 'sectionGroup'"
+					ng-init="parentCourse = view.state.courses.list[view.selectedEntity.courseId]">
+					{{ parentCourse.subjectCode }} {{ parentCourse.courseNumber }}
+					<br>
+					<small>{{ view.selectedEntity.termCode.getTermCodeDisplayName() }}</small>
+				</h4>
+			</div>
+
+			<div class="panel-options">
+				<a ng-click="closeDetails()"><i class="entypo-cancel"></i></a>
+			</div>
+		</div>
+
+		<div class="panel-body no-padding">
+			<div class="course-details" ng-if="view.selectedEntityType == 'course'">
+				<!-- Edit course form -->
+				<form role="form" class="form-horizontal form-groups-bordered">
+					<div class="right-details-group">
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1">
+								<strong>Title</strong>
+								<br />
+								<input auto-input
+									type="text" class="form-control course-title-edit"
+									on-enter="updateCourse()"
+									on-blur="updateCourse()"
+									help-text-placement="bottom"
+									ng-model="view.selectedEntity.title" />
+							</div>
+						</div>
+					</div>
+					<div class="right-details-group">
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1">
+								<strong>Tags</strong>
+								<br />
+
+								<ui-select multiple ng-model="view.selectedEntity.tagIds" theme="bootstrap"
+								close-on-select="false" on-select="addTag($item, $model)" on-remove="removeTag($item, $model)">
+									<ui-select-match placeholder="Select tags...">{{view.state.tags.list[$item].name}}</ui-select-match>
+									<!-- TODO: needs custom filter -->
+									<ui-select-choices repeat="tagId in view.state.tags.ids | filter:$select.search">
+										<div ng-bind-html="view.state.tags.list[tagId].name | highlight: $select.search"></div>
+									</ui-select-choices>
+								</ui-select>
+
+							</div>
+						</div>
+					</div>
+					<div class="right-details-group">
+						<div class="row">
+							<label class="col-sm-3 col-sm-offset-1 control-label">Sequence</label>
+							<div class="col-sm-7">
+								<input type="text" ng-model="view.selectedEntity.sequencePattern"
+												uib-typeahead="sequencePattern for sequencePattern in sequencePatterns | filter:$viewValue | limitTo:8"
+												typeahead-loading="loadingSequences"
+												typeahead-no-results="noResults"
+												typeahead-editable="false"
+												typeahead-on-select="updateCourse()"
+												class="form-control course-sequence-pattern">
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="course-details" ng-if="view.selectedEntityType == 'newCourse'">
+				<!-- New course form -->
+				<form role="form" class="form-horizontal form-groups-bordered" ng-if="view.state.courses.newCourse">
+					<div class="right-details-group">
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1">
+								<strong>Course</strong>
+								<br />
+								<input type="text" ng-model="selectedCourse" placeholder="Search courses"
+												uib-typeahead="course as (course.subjectCode + ' ' + course.courseNumber + ' ' + course.title) for course in searchCourses($viewValue)"
+												typeahead-loading="loadingCourses"
+												typeahead-no-results="noResults"
+												typeahead-wait-ms="400"
+												typeahead-min-length="2"
+												typeahead-on-select="searchCoursesResultSelected($item, $model, $label, $event)"
+												class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="right-details-group">
+						<div class="row">
+							<label class="col-sm-3 col-sm-offset-1 control-label">Sequence</label>
+							<div class="col-sm-7">
+								<input type="text" ng-model="view.selectedEntity.sequencePattern"
+												uib-typeahead="sequencePattern for sequencePattern in sequencePatterns | filter:$viewValue | limitTo:10"
+												typeahead-loading="loadingSequences"
+												typeahead-no-results="noResults"
+												typeahead-editable="false"
+												class="form-control course-sequence-pattern">
+							</div>
+						</div>
+					</div>
+					<div class="right-details-group">
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1 ">
+								<button type="button" class="btn btn-white" ng-click="closeDetails()">Cancel</button>
+								<button type="button" class="btn btn-blue pull-right" ng-click="createCourse()"
+									ng-class="{ 'disabled': !newCourseIsValid() }"
+									uib-tooltip="All fields are required"
+									tooltip-enable="!newCourseIsValid()">
+										Create
+								</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="section-group-details" style="padding: 1em;"
+				ng-if="view.selectedEntityType == 'sectionGroup'">
+				<census-chart census="view.state.courses.list[view.selectedEntity.courseId].census"
+					schedule-term-state="view.state.scheduleTermStates.list[view.selectedEntity.termCode]"
+					course-id="view.selectedEntity.courseId"></census-chart>
+				<hr />
+				<table class="table sections-table" style="margin-bottom: 5px;" ng-if="view.selectedEntity.sectionIds.length">
+					<colgroup>
+						<col span="1" style="width: 30%;">
+						<!--<col span="1" style="width: 30%;">-->
+						<col span="1" style="width: 30%;">
+						<col span="1" style="width: 10%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Section</th>
+							<!--<th>Enrollment</th>-->
+							<th>Seats</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="sectionId in view.selectedEntity.sectionIds track by $index">
+							<td>{{ view.state.sections.list[sectionId].sequenceNumber }}</td>
+							<!-- TODO: Get enrollment live from DW? -->
+							<!--<td>{{ section.enrollment }}</td>-->
+							<td>
+								<input auto-input
+									type="number" class="form-control section-seats-edit text-center"
+									on-enter="updateSection(view.state.sections.list[sectionId])"
+									on-blur="updateSection(view.state.sections.list[sectionId])"
+									help-text-placement="left"
+									ng-model="view.state.sections.list[sectionId].seats" />
+							</td>
+							<td>
+								<a class="text-danger clickable"
+									uib-tooltip="Delete"
+									confirm-button="deleteSection(view.state.sections.list[sectionId])"
+									message="Are you sure you want to remove this section"
+									yes="Delete" no="Cancel" placement="left">
+										<i class="entypo-cancel-squared"></i>
+								</a>
+							</td>
+						</tr>
+						<tr ng-if="view.selectedEntity.sectionIds.length > 1">
+							<td><strong>Total</strong></td>
+							<!-- TODO: Get enrollment live from DW? -->
+							<!--<td>{{ section.enrollment }}</td>-->
+							<td class="text-center">{{ sectionSeatTotal(view.selectedEntity) }}</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div ng-if="view.selectedEntity.sectionIds.length == 0"
+					class="text-center text-muted" style="padding: 1em;">No sections available</div>
+				<div class="col-sm-12 text-center" ng-if="nextSequence()">
+						<button class="btn btn-white" uib-tooltip="Add a section" tooltip-placement="right"
+							ng-click="addSection()">Create {{ nextSequence() }}</button>
+				</div>
+				<div class="col-sm-12 text-center" ng-if="!view.selectedEntity.id">
+						<p>No Course Offering for {{view.selectedEntity.termCode.getTermCodeDisplayName()}}</p>
+						<button class="btn btn-primary" ng-click="addSectionGroup()">Create Offering</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-primary panel-highlight" ng-if="view.state.uiState.massImportMode">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<h4>Add Multiple Courses</h4>
+			</div>
+		</div>
+		<div class="panel-body no-padding">
+			<div class="col-sm-12 import-summary">
+				<div ng-hide="view.state.courses.importList">
+					Please search for courses to import
+				</div>
+				<div ng-show="view.state.courses.importList">
+					Courses are being imported
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Neon Admin Panel" />
+	<meta name="author" content="" />
+
+	<link rel="icon" href="/images/favicon.ico">
+
+	<title>IPA Assignments</title>
+
+	<link rel="stylesheet" href="/css/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="/css/entypo.css">
+	<link rel="stylesheet" href="/css/lib.css">
+	<link rel="stylesheet" href="/css/neon-core.css">
+	<link rel="stylesheet" href="/css/neon-theme.css">
+	<link rel="stylesheet" href="/css/neon-forms.css">
+	<link rel="stylesheet" href="/css/shared.css">
+	<link rel="stylesheet" href="/css/assignments.css">
+	<link rel="stylesheet" href="/css/teaching-call-modal.css">
+	<link rel="stylesheet" href="/css/select2-bootstrap.css">
+	<link rel="stylesheet" href="/css/select2.css">
+	<link rel="stylesheet" href="/css/ta-assignment.css">
+
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+	<script src="/js/jquery-1.11.3.min.js"></script>
+	<script src="/js/select2.min.js"></script>
+	<script src="/js/neon-custom.js"></script>
+	<script src="/js/jquery-ui.min.js"></script>
+	
+
+</head>
+<body class="page-body" >
+<div class="page-container sidebar-collapsed"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+	<div class="sidebar-menu">
+
+		<div class="sidebar-menu-inner">
+
+			<header class="logo-env">
+
+				<!-- logo -->
+				<div class="logo">
+					<a href="index.html">
+						<h1 style="color: #fff; margin:0;">IPA</h1>
+					</a>
+				</div>
+
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+			</header>
+
+			<!-- User and Organization -->
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li class="welcome">
+						<span class="title">Welcome John Henderson</span>
+				</li>
+				<li>
+					<a href="logout.html">
+						<i class="entypo-logout"></i>
+						<span class="title">Logout</span>
+					</a>
+				</li>
+				<li>
+					<a href="workgroup.html">
+						<i class="entypo-users"></i>
+						<span class="title">Computer Science</span>
+					</a>
+				</li>
+			</ul>
+
+			<!-- Year switcher -->
+			<ul class="pager year-switcher">
+				<li class="previous"><a href="#"><i class="entypo-left-open-mini"></i></a></li>
+				<li ><a href="#">2016</a></li>
+				<li class="next"><a href="#"><i class="entypo-right-open-mini"></i></a></li>
+			</ul>
+
+			<!-- Sidebar links -->
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li>
+					<a href="courses.html">
+						<i class="entypo-book"></i>
+						<span class="title">Courses</span>
+					</a>
+				</li>
+				<li class="active">
+					<a href="assignments.html">
+						<i class="entypo-user-add"></i>
+						<span class="title">Assignments</span>
+					</a>
+				</li>
+				<li>
+					<a href="scheduling.html">
+						<i class="entypo-calendar"></i>
+						<span class="title">Scheduling</span>
+					</a>
+					<ul class="visible">
+						<li><a href="scheduling.html">Fall Quarter 2015</a></li>
+						<li><a href="scheduling.html">Winter Quarter 2016</a></li>
+						<li><a href="scheduling.html">Spring Quarter 2016</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="reports.html">
+						<i class="entypo-newspaper"></i>
+						<span class="title">Reports</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="margin-bottom-30">
+			<h3 class="text-align--center">Teaching-Call 2016-17</h3>
+			<h4 class="text-align--center">Psychology</h4>
+		</div>
+<div class="row">
+		<div class="col-md-6">
+			<h5>Provide Courses:</h5>
+		</div>
+		<div class="col-md-6">
+			<i class="glyphicon glyphicon-question-sign pull-right question--position"></i>
+		</div>
+</div>
+<div class="container-fluid margin-bottom-30">
+	<div class="flex-box">
+<!--1-->
+<div class="course-term-container">
+	<div class="course-term">
+		<strong>Summer Session 1</strong>
+	</div>
+
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="unconfirmed-course unconfirmed-course-info">
+		<div class="unconfirmed-course_children">
+			<i class="glyphicon glyphicon-option-vertical"></i>
+		</div>
+		<div class="unconfirmed-course_children">
+			<div class="unconfirmed-course_children-flex">PSY 001</div>
+		</div>
+		<div class="unconfirmed-course_children">
+		</div>
+	</div>
+</div>
+<!--2-->
+<div class="course-term-container">
+	<div class="check-unavailable-term">
+		<strong>Summer Session 1</strong>
+	</div>
+
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="unconfirmed-course unconfirmed-course-info">
+		<div class="unconfirmed-course_children">
+			<i class="glyphicon glyphicon-option-vertical"></i>
+		</div>
+		<div class="unconfirmed-course_children">
+			<div class="unconfirmed-course_children-flex">PSY 001</div>
+		</div>
+		<div class="unconfirmed-course_children">
+		</div>
+	</div>
+</div>
+<!--3-->
+<div class="course-term-container">
+	<div class="check-unavailable-term">
+		<strong>Summer Session 1</strong>
+	</div>
+
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="unconfirmed-course unconfirmed-course-info">
+		<div class="unconfirmed-course_children">
+			<i class="glyphicon glyphicon-option-vertical"></i>
+		</div>
+		<div class="unconfirmed-course_children">
+			<div class="unconfirmed-course_children-flex">PSY 001</div>
+		</div>
+		<div class="unconfirmed-course_children">
+		</div>
+	</div>
+</div>
+<!--4-->
+<div class="course-term-container">
+	<div class="check-unavailable-term">
+		<strong>Summer Session 1</strong>
+	</div>
+
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="course-style confirmed-course-info">
+		PSY 002
+	</div>
+	<div class="unconfirmed-course unconfirmed-course-info">
+		<div class="unconfirmed-course_children">
+			<i class="glyphicon glyphicon-option-vertical"></i>
+		</div>
+		<div class="unconfirmed-course_children">
+			<div class="unconfirmed-course_children-flex">PSY 001</div>
+		</div>
+		<div class="unconfirmed-course_children">
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+<!-- Select Unavailabilities ends -->
+
+<div class="margin-bottom-30">
+<div class="row">
+		<div class="col-md-6">
+			<h5>Provide Courses:</h5>
+		</div>
+		<div class="col-md-6">
+			<i class="glyphicon glyphicon-question-sign pull-right question--position"></i>
+		</div>
+</div>
+<div class="container-fluid">
+<div style="padding:0px;border:1px solid #ebebeb">
+<div class="row">
+	<div class="check-unavailable">
+		<!--date -->
+		<div class="check-unavailable-time">
+			<div class="check-unavailable-time-flex" style="background-color:#f5f5f6;height: 3.15em;">
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					9 AM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					10 AM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					11 AM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					12 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					1 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					2 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					3 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					4 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					5 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					6 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					7 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex">
+				<div class="check-unavailable-time-flex-children">
+					8 PM
+				</div>
+			</div>
+			<div class="check-unavailable-time-flex border-bottom-none">
+				<div class="check-unavailable-time-flex-children">
+					9 PM
+				</div>
+			</div>
+		</div>
+		<!-- date ends-->
+		<!-- pick place-->
+		<div class="check-unavailable-date">
+			<div class="check-unavailable-term">
+				<strong>Summer Session 1</strong>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-days">
+					M
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					T
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					W
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					R
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					F
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex border-bottom-none">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>	
+		</div>
+		<!-- pick place ends-->
+		<!-- pick place-->
+		<div class="check-unavailable-date">
+			<div class="check-unavailable-term">
+				<strong>Summer Session 2</strong>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-days">
+					M
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					T
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					W
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					R
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					F
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>	
+			
+		</div>
+		<!-- pick place ends-->
+		<!-- pick place-->
+		<div class="check-unavailable-date">
+			<div class="check-unavailable-term">
+				<strong>Fall Quarter</strong>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-days">
+					M
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					T
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					W
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					R
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					F
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex border-bottom-none">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>	
+			
+		</div>
+		<!-- pick place ends-->
+		<!-- pick place-->
+		<div class="check-unavailable-date">
+			<div class="check-unavailable-term">
+				<strong>Winter Quarter</strong>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-days">
+					M
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					T
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					W
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					R
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					F
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex border-bottom-none">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>	
+			
+		</div>
+		<!-- pick place ends-->
+		<!-- pick place-->
+		<div class="check-unavailable-date border-right-none">
+			<div class="check-unavailable-term">
+				<strong>Spring Quarter</strong>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-days">
+					M
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					T
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					W
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					R
+				</div>
+				<div class="check-unavailable-date-flex-days">
+					F
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>
+			<div class="check-unavailable-date-flex border-bottom-none">
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+				<div class="check-unavailable-date-flex-children">
+					
+				</div>
+			</div>	
+			
+		</div>
+		<!-- pick place ends-->
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+		<!-- Comments -->
+		<div class="row">
+		<div class="col-md-12">
+			<h5>Provide Comments:</h5>
+		</div>
+	</div>
+	<div class="container-fluid margin-bottom-30">
+		<textarea class="form-control" style="height:150px;" placeholder="Important: Instructor Name, Due Date, and Quarter Term will all be included." rows="5" id="comment"></textarea>
+	</div>
+		<!-- Comments ends -->
+	<div class="row">
+		<div class="container-fluid pull-right">
+			<button type="button" class="btn btn-info">Submit</button>
+		</div>
+	</div>
+
+
+
+		</div>
+	</div>
+
+	<link rel="stylesheet" href="/css/select2-bootstrap.css">
+	<link rel="stylesheet" href="/css/select2.css">
+
+	<!-- Bottom scripts (common) -->
+	<script src="/js/TweenMax.min.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/resizeable.js"></script>
+	<script src="/js/select2.min.js"></script> <!-- Multiselect library -->
+	<script src="/js/neon-api.js"></script>
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="/js/neon-custom.js"></script>
+
+
+
+</body>
+</html>

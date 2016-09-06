@@ -1,0 +1,102 @@
+<div class="sidebar-menu">
+
+	<div class="sidebar-menu-inner">
+
+		<header class="logo-env">
+
+			<!-- logo -->
+			<div class="logo">
+				<a ng-href="/summary/{{ workgroupId }}/{{ year }}/{{ term.code }}">
+					<h1 style="color: #fff; margin:0;">IPA</h1>
+				</a>
+			</div>
+
+			<!-- logo collapse icon -->
+			<div class="sidebar-collapse">
+				<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+					<i class="entypo-menu"></i>
+				</a>
+			</div>
+
+
+			<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+			<div class="sidebar-mobile-menu visible-xs">
+				<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+					<i class="entypo-menu"></i>
+				</a>
+			</div>
+
+		</header>
+
+		<!-- User and Organization -->
+		<ul id="main-menu" class="main-menu">
+			<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+			<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+			<li class="welcome">
+					<span class="title">Howdy, {{ sharedState.displayName }}</span>
+			</li>
+			<li>
+				<a ng-click="logout()">
+					<i class="entypo-logout"></i>
+					<span class="title">Logout</span>
+				</a>
+			</li>
+			<li>
+				<a href="/workgroups/{{ sharedState.workgroup.id }}/{{ sharedState.year }}/{{ term.code }}">
+					<i class="entypo-users"></i>
+					<span class="title" ng-if="sharedState.userWorkgroups.length > 1">Workgroups</span>
+					<span class="title" ng-if="sharedState.userWorkgroups.length == 1">{{ sharedState.workgroup.name }}</span>
+				</a>
+				<ul class="visible" ng-if="sharedState.userWorkgroups.length > 1">
+					<li ng-repeat="workgroup in sharedState.userWorkgroups track by workgroup.id"
+					ng-class="{ 'active': sharedState.workgroup.id == workgroup.id }">
+						<a ng-href="/workgroups/{{ workgroup.id }}/{{ sharedState.year }}/{{ term.code }}">
+							<span class="title">{{ workgroup.name }}</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<!-- Year switcher -->
+		<ul class="pager year-switcher">
+			<li class="previous"><a ng-click="changeYearBy(-1)"><i class="entypo-left-open-mini clickable hoverable"></i></a></li>
+			<li ><a>{{ year }}</a></li>
+			<li class="next"><a ng-click="changeYearBy(1)"><i class="entypo-right-open-mini clickable hoverable"></i></a></li>
+		</ul>
+
+		<!-- Sidebar links -->
+		<ul id="main-menu" class="main-menu">
+			<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+			<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+			<li>
+				<a ng-href="/courses/{{ workgroupId }}/{{ year }}/{{ term.code }}">
+					<i class="entypo-book"></i>
+					<span class="title">Courses</span>
+				</a>
+			</li>
+			<li>
+				<a ng-href="/assignments/{{ workgroupId }}/{{ year }}/{{ term.code }}">
+					<i class="entypo-user-add"></i>
+					<span class="title">Assignments</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class="entypo-calendar"></i>
+					<span class="title">Scheduling</span>
+				</a>
+				<ul class="visible">
+					<li ng-repeat="term in termDefinitions track by term.id" ng-class="{'active': term.code == termCode}">
+						<a ng-href="/scheduling/{{ workgroupId }}/{{ year }}/{{ term.code }}">
+							{{ term.description }}
+						</a>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+
+	</div>
+
+</div>
